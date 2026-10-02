@@ -82,7 +82,7 @@ export default function TrustBar() {
           {/* Right — Lender Logos */}
           <div className="flex flex-col gap-4 lg:ml-auto w-full lg:w-auto mt-8 lg:mt-0 items-center lg:items-end">
             {/* Top Row: 3 Lenders */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-3 xl:gap-4">
+            <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-3 xl:gap-4">
               {LOGO_SETS.slice(0, 3).map((logos, index) => (
                 <div key={`top-${index}`} className="w-28 sm:w-44 lg:w-[116px] xl:w-44">
                   <AnimatedLogoBlock logos={logos} intervalMs={TIMINGS[index]} />
@@ -91,7 +91,7 @@ export default function TrustBar() {
             </div>
             
             {/* Bottom Row: 3 Lenders + Extra Card */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-3 xl:gap-4">
+            <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-3 xl:gap-4">
               {LOGO_SETS.slice(3, 6).map((logos, index) => (
                 <div key={`bottom-${index}`} className="w-24 sm:w-36 lg:w-24 xl:w-36">
                   <AnimatedLogoBlock logos={logos} intervalMs={TIMINGS[index + 3]} />
