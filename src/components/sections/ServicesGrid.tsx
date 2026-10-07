@@ -5,7 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export default function ServicesGrid() {
   return (
     <section className="py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Tailored Loan Solutions"
           title="Solutions for every stage of your journey."

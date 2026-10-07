@@ -39,7 +39,7 @@ export default function Button({
   type = "button",
   onClick,
 }: ButtonProps) {
-  const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+  const classes = [baseStyles, variants[variant], sizes[size], className].filter(Boolean).join(" ");
 
   if (href) {
     return (

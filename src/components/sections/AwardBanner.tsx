@@ -1,7 +1,7 @@
 export default function AwardBanner() {
   return (
     <section className="py-16 bg-light-bg border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Placeholder — real award/certification asset to be supplied by client */}
         <div className="inline-flex items-center gap-6 bg-white rounded-2xl px-8 py-6 shadow-sm border border-border">
           <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center shrink-0">

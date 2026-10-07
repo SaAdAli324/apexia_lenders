@@ -76,7 +76,7 @@ export default function ContactForm() {
           name="loanType"
           className="w-full px-4 py-3 border border-border/50 text-sm bg-white text-slate focus:outline-none focus:ring-1 focus:ring-navy focus:border-navy transition-colors appearance-none"
         >
-          <option value="">Select an option</option>
+          <option value="">Select a loan type...</option>
           {LOAN_TYPES.map((type) => (
             <option key={type} value={type}>
               {type}

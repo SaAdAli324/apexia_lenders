@@ -18,15 +18,15 @@ const TIMINGS = [2500, 2200, 2800, 3100, 2400, 2900];
 
 function AnimatedLogoBlock({ logos, intervalMs }: { logos: string[]; intervalMs: number }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setFade(false); // trigger black cover
+      setIsFadingOut(true);
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % logos.length);
-        setFade(true); // remove black cover
-      }, 500); // 500ms black duration
+        setIsFadingOut(false);
+      }, 500); 
     }, intervalMs);
 
     return () => clearInterval(timer);
@@ -37,15 +37,9 @@ function AnimatedLogoBlock({ logos, intervalMs }: { logos: string[]; intervalMs:
       <img
         src={logos[currentIndex]}
         alt="Lender Logo"
-        className={`w-full h-full object-contain p-2 transition-transform duration-500 ease-in-out ${
-          fade ? "scale-100" : "scale-50"
+        className={`w-full h-full object-contain p-2 transition-all duration-500 ease-in-out ${
+          isFadingOut ? "opacity-0 scale-95" : "opacity-100 scale-100"
         }`}
-      />
-      {/* Black fade overlay */}
-      <div 
-        className={`absolute inset-0 bg-black transition-opacity duration-500 ease-in-out ${
-          fade ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`} 
       />
     </div>
   );
@@ -54,7 +48,7 @@ function AnimatedLogoBlock({ logos, intervalMs }: { logos: string[]; intervalMs:
 export default function TrustBar() {
   return (
     <section className="bg-light-bg py-14 lg:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Copy */}
           <div className="text-center lg:text-left flex flex-col items-center lg:items-start">

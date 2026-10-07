@@ -42,24 +42,10 @@ export const services: Service[] = [
     icon: "🏗️",
   },
   {
-    title: "Personal Loans",
-    slug: "personal-loans",
-    description:
-      "Whether it's a holiday, wedding, or unexpected expense — access competitive personal loan rates from our panel of trusted lenders.",
-    icon: "💰",
-  },
-  {
     title: "First Home Buyer Support",
     slug: "first-home-buyer-support",
     description:
       "Access government guarantee schemes, grants, and first home buyer concessions. We guide you through every step of the process to get you into your first home faster.",
     icon: "🔑",
-  },
-  {
-    title: "Conveyancing",
-    slug: "conveyancing",
-    description:
-      "We work with trusted conveyancing partners to ensure your property settlement goes smoothly. Get referred to experienced professionals at competitive rates.",
-    icon: "📋",
   },
 ];

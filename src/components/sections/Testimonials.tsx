@@ -9,7 +9,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 lg:py-24 bg-light-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="What Our Clients Say"
           title="Trusted by homeowners across Australia."

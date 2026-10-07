@@ -26,8 +26,6 @@ export const FOOTER_LINKS = {
     { label: "Investment Property Loans", href: "/services/investment-property" },
     { label: "Fixed & Variable Rates", href: "/services/rates" },
     { label: "Construction & Building Loans", href: "/services/construction" },
-    { label: "Personal Loans", href: "/services/personal" },
-    { label: "Conveyancing", href: "/services/conveyancing" },
   ],
   company: [
     { label: "About Us", href: "/about" },
@@ -59,7 +57,5 @@ export const LOAN_TYPES = [
   "Investment Property",
   "Construction Loan",
   "Debt Consolidation",
-  "Personal Loan",
   "First Home Buyer",
-  "Conveyancing",
 ] as const;

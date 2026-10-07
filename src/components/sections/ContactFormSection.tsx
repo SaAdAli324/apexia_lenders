@@ -3,7 +3,7 @@ import ContactForm from "@/components/forms/ContactForm";
 export default function ContactFormSection() {
   return (
     <section className="py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left — Copy */}
           <div className="bg-navy p-8 lg:p-12 text-white flex flex-col justify-between">
