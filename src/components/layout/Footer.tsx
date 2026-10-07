@@ -25,7 +25,7 @@ export default function Footer() {
             {/* Loans Column */}
             <div className="lg:mt-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-navy mb-4">
-                LOANS
+                HOME LOANS
               </h4>
               <ul className="space-y-3">
                 {FOOTER_LINKS.loans.map((link) => (
@@ -80,13 +80,28 @@ export default function Footer() {
             </div>
 
             {/* Contact Column */}
-            <div className="lg:col-span-2 xl:col-span-1 lg:mt-4">
+            <div className="col-span-1 min-[375px]:col-span-2 lg:col-span-2 xl:col-span-1 lg:mt-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-navy mb-4">
                 GET IN TOUCH
               </h4>
               <p className="text-sm text-slate leading-relaxed mb-5">
                 As a nationwide brokerage, we make it easy to connect with a dedicated lending expert using our secure online form.
               </p>
+
+              <div className="space-y-3 mb-6">
+                <a href={`mailto:${BRAND.email}`} className="flex items-center gap-3 text-slate hover:text-[#13A3B5] transition-colors group">
+                  <svg className="w-5 h-5 text-[#13A3B5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span className="text-sm font-medium">{BRAND.email}</span>
+                </a>
+                <a href="tel:1300000000" className="flex items-center gap-3 text-slate hover:text-[#13A3B5] transition-colors group">
+                  <svg className="w-5 h-5 text-[#13A3B5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span className="text-sm font-medium">1300 000 000</span>
+                </a>
+              </div>
               
               <div className="mb-6">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-navy mb-3">Follow us on</p>
