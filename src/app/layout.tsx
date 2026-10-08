@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Apexia Lending | Expert Home Loans in Australia",
+  title: "Apexia Lending | Expert Home Loan in Australia",
   description:
-    "Compare 50+ Australian lenders and find the right home loan for you. Free mortgage brokerage service — home loans, refinancing, investment loans & more.",
+    "Compare 50+ Australian lenders and find the right home loan for you. Free mortgage brokerage service — home loan, refinancing, investment loan & more.",
   keywords: [
     "mortgage broker",
     "home loan",

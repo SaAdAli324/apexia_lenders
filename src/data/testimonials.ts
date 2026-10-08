@@ -28,7 +28,7 @@ export const testimonials: Testimonial[] = [
     name: "David L.",
     location: "Brisbane, QLD",
     quote:
-      "As an investor, I needed a broker who understood the numbers. Apexia structured my loans perfectly and helped me grow my portfolio with confidence.",
+      "As an investor, I needed a broker who understood the numbers. Apexia structured my loan perfectly and helped me grow my portfolio with confidence.",
     rating: 5,
     loanType: "Investment Property",
   },

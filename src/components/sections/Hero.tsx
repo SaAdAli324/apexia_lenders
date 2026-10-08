@@ -79,7 +79,7 @@ export default function Hero() {
           {/* Left Content */}
           <div className="flex flex-col justify-center relative z-10 xl:pr-8 text-center md:text-left items-center md:items-start">
             <p className="text-navy font-bold text-xs tracking-[0.2em] uppercase mb-4 mt-4 lg:mt-0">
-              Expert Home Loans. Better Outcomes.
+              Expert Home Loan. Better Outcomes.
             </p>
             <div className="mb-6 w-full">
               <h1 className="text-fluid-h1 font-bold text-navy flex flex-col items-center md:items-start">
@@ -230,7 +230,7 @@ function ConsultationForm({ onClose }: { onClose: () => void }) {
           </svg>
         </div>
         <h3 className="text-2xl font-bold text-navy mb-2">Request Received!</h3>
-        <p className="text-slate">We'll be in touch with you shortly to schedule your consultation.</p>
+        <p className="text-slate">We&apos;ll be in touch with you shortly to schedule your consultation.</p>
       </div>
     );
   }
@@ -250,7 +250,7 @@ function ConsultationForm({ onClose }: { onClose: () => void }) {
       <div className="flex-1 flex flex-col justify-center h-full">
         <div className="mb-4 lg:mb-6 text-left pr-10 lg:pr-0">
           <h3 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-navy mb-1 lg:mb-2">Book a Consultation</h3>
-          <p className="text-slate text-xs md:text-sm lg:text-base">Tell us a bit about what you're looking for, and our experts will be in touch.</p>
+          <p className="text-slate text-xs md:text-sm lg:text-base">Tell us a bit about what you&apos;re looking for, and our experts will be in touch.</p>
         </div>
         
         <form className="flex-none space-y-3 lg:space-y-5" onSubmit={handleSubmit}>

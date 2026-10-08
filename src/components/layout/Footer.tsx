@@ -14,7 +14,7 @@ export default function Footer() {
                 <img src="/logo.png" alt="Apexia Logo" className="h-10 md:h-12 w-auto -ml-3" />
               </Link>
               <p className="text-slate text-sm leading-relaxed pr-4">
-                {BRAND.legalName} is a leading mortgage brokerage in Australia. We compare home loans, with better rates and exceptional service.
+                {BRAND.legalName} is a leading mortgage brokerage in Australia. We compare home loan, with better rates and exceptional service.
               </p>
               <div className="mt-4 text-xs text-slate-light">
                 <p>Australian Credit Licence: 521 559</p>
@@ -22,10 +22,10 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Loans Column */}
+            {/* Loan Column */}
             <div className="lg:mt-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-navy mb-4">
-                HOME LOANS
+                HOME LOAN
               </h4>
               <ul className="space-y-3">
                 {FOOTER_LINKS.loans.map((link) => (

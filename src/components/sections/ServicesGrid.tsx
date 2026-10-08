@@ -37,7 +37,7 @@ export default function ServicesGrid() {
             return (
               <Card
                 key={service.slug}
-                icon={svgIcon as any}
+                icon={svgIcon as React.ReactNode}
                 title={service.slug === "construction" ? "Fixed & Variable Rates with Offset/Redraw" : service.title}
                 description={service.description}
                 href={`/services/${service.slug}`}

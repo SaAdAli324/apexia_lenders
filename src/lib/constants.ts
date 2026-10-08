@@ -3,7 +3,7 @@
 export const BRAND = {
   name: "Apexia Lending",
   legalName: "Zawak Private Ltd",
-  tagline: "Expert Home Loans. Better Outcomes.",
+  tagline: "Expert Home Loan. Better Outcomes.",
   email: "info@apexialending.com.au",
   licenceNumber: "ACR XXXXXX", // Placeholder — replace with real ACL/ACR number
   afcaMember: "AFCA Member No. XXXXXX", // Placeholder
@@ -12,7 +12,7 @@ export const BRAND = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Loans", href: "/services" },
+  { label: "Loan", href: "/services" },
   { label: "About Us", href: "/about" },
   { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
@@ -20,12 +20,12 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = {
   loans: [
-    { label: "First Home Buyer Loans", href: "/services/first-home-buyer" },
+    { label: "First Home Buyer Loan", href: "/services/first-home-buyer" },
     { label: "Refinancing", href: "/services/refinancing" },
     { label: "Debt Consolidation", href: "/services/debt-consolidation" },
-    { label: "Investment Property Loans", href: "/services/investment-property" },
+    { label: "Investment Property Loan", href: "/services/investment-property" },
     { label: "Fixed & Variable Rates", href: "/services/rates" },
-    { label: "Construction & Building Loans", href: "/services/construction" },
+    { label: "Construction Loan", href: "/services/construction" },
   ],
   company: [
     { label: "About Us", href: "/about" },
@@ -52,7 +52,6 @@ export const AUSTRALIAN_STATES = [
 ] as const;
 
 export const LOAN_TYPES = [
-  "Home Loan",
   "Refinancing",
   "Investment Property",
   "Construction Loan",

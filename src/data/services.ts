@@ -7,7 +7,7 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    title: "First Home Buyer Loans",
+    title: "First Home Buyer Loan",
     slug: "first-home-buyer",
     description:
       "Navigate your first home purchase with expert guidance and access to exclusive first home buyer grants, government schemes, and the lowest rates available.",
@@ -28,17 +28,17 @@ export const services: Service[] = [
     icon: "💳",
   },
   {
-    title: "Investment Property Loans",
+    title: "Investment Property Loan",
     slug: "investment-property",
     description:
       "Build your property portfolio with competitive investment loan options. We help you find the right loan structure to maximise your returns.",
     icon: "📊",
   },
   {
-    title: "Construction & Building Loans",
+    title: "Construction Loan",
     slug: "construction",
     description:
-      "Planning to build your dream home? We specialise in construction loans with progress payment structures tailored to your building timeline.",
+      "Planning to build your dream home? We specialise in construction loan with progress payment structures tailored to your building timeline.",
     icon: "🏗️",
   },
   {
