@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { TOTAL_LENDERS } from "@/data/lenders";
 
 const ALL_LOGOS = [
@@ -44,7 +45,7 @@ export default function TrustBar() {
   }, []);
 
   return (
-    <section className="bg-light-bg py-16 lg:py-24 relative overflow-hidden flex flex-col items-center min-h-[600px]">
+    <section className="bg-[#F8FAFC] border-b border-slate-200/80 py-16 lg:py-24 relative overflow-hidden flex flex-col items-center min-h-[600px]">
       <style dangerouslySetInnerHTML={{
         __html: `
         @keyframes float-iso {
@@ -68,7 +69,7 @@ export default function TrustBar() {
                 From major banks to specialist lenders, we compare hundreds of
                 loan products to find the right fit for your goals and your future.
               </p>
-              <a
+              <Link
                 href="/services"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-teal text-white font-bold text-sm rounded-xl hover:bg-teal-light transition-all shadow-[0_4px_14px_0_rgba(19,163,181,0.39)] hover:shadow-[0_6px_20px_rgba(19,163,181,0.23)] hover:-translate-y-0.5 group"
               >
@@ -76,7 +77,7 @@ export default function TrustBar() {
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Right Side: Isometric Grid */}

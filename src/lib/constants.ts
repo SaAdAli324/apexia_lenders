@@ -5,17 +5,89 @@ export const BRAND = {
   legalName: "Zawak Private Ltd",
   tagline: "Expert Home Loan. Better Outcomes.",
   email: "info@apexialending.com.au",
-  licenceNumber: "ACR XXXXXX", // Placeholder — replace with real ACL/ACR number
-  afcaMember: "AFCA Member No. XXXXXX", // Placeholder
+  creditRepresentativeNumber: "554111",
+  australianCreditLicence: "389328",
+  licenceDisclosure: "Credit Representative Number 554111 is authorised under Australian Credit Licence 389328",
+  licenceNumber: "CRN 554111 / ACL 389328",
+  afcaMember: "AFCA Member No. XXXXXX",
   lenderCount: 50,
 } as const;
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Loan", href: "/services" },
+  { label: "Loans", href: "/services" },
+  { label: "Calculators", href: "/calculators" },
   { label: "About Us", href: "/about" },
-  { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+export const LOAN_NAV_ITEMS = [
+  {
+    title: "First Home Buyer Loan",
+    slug: "first-home-buyer",
+    href: "/services/first-home-buyer",
+    desc: "Government schemes, grants & competitive low-deposit options.",
+    tag: "Govt Schemes",
+  },
+  {
+    title: "Refinancing & Better Rates",
+    slug: "refinancing",
+    href: "/services/refinancing",
+    desc: "Lower monthly repayments, unlock equity, and secure a better rate.",
+    tag: "Rate Reduction",
+  },
+  {
+    title: "Investment Property Loan",
+    slug: "investment-property",
+    href: "/services/investment-property",
+    desc: "Tax-effective loan structuring to grow your wealth & property portfolio.",
+    tag: "Portfolio Growth",
+  },
+  {
+    title: "Debt Consolidation",
+    slug: "debt-consolidation",
+    href: "/services/debt-consolidation",
+    desc: "Combine multiple high-interest cards & personal loans into one payment.",
+    tag: "Single Repayment",
+  },
+  {
+    title: "Construction Loan",
+    slug: "construction",
+    href: "/services/construction",
+    desc: "Progressive drawdown funding tailored to each stage of building.",
+    tag: "Progress Drawdown",
+  },
+  {
+    title: "Fixed vs Variable Rates",
+    slug: "rates",
+    href: "/services/rates",
+    desc: "Compare fixed, variable, and split rate strategies across 50+ lenders.",
+    tag: "Rate Strategy",
+  },
+] as const;
+
+export const CALCULATOR_NAV_ITEMS = [
+  {
+    title: "Borrowing Power Calculator",
+    slug: "borrowing-power",
+    href: "/calculators#borrowing-power",
+    desc: "Estimate how much you can borrow based on income and expenses.",
+    tag: "Capacity",
+  },
+  {
+    title: "Mortgage Repayments Calculator",
+    slug: "repayments",
+    href: "/calculators#repayments",
+    desc: "Calculate weekly, fortnightly, or monthly repayments with rate buffer.",
+    tag: "Repayments",
+  },
+  {
+    title: "Stamp Duty & Upfront Fees",
+    slug: "stamp-duty",
+    href: "/calculators#stamp-duty",
+    desc: "Estimate state-based property transfer duty & government costs.",
+    tag: "Upfront Costs",
+  },
 ] as const;
 
 export const FOOTER_LINKS = {

@@ -6,7 +6,7 @@
 - **Industry:** Mortgage brokerage, based in Australia
 - **Owner/operator:** Farid Ghafoori — solo broker, no team currently
 - **Stage:** Brand new business, just starting out (no prior "years in operation" to show)
-- **Licensing:** Will display an Australian Credit Licence (ACL) or Credit Representative (ACR) number in the footer — this is a legal requirement for Australian mortgage brokers. Exact number TBD/placeholder until supplied.
+- **Licensing:** Credit Representative Number 554111 is authorised under Australian Credit Licence 389328. Displayed in footer, About Us, and Credit Guide as legally required.
 
 ## What the Business Does
 Apexia Lending is a mortgage brokerage — it doesn't lend money directly. It compares home loan offers from 50+ Australian lenders/banks, recommends the best option to the customer, and manages the loan application process. Revenue comes from lender commissions, so the service is free to the customer.

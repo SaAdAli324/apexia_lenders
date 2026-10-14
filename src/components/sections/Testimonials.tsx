@@ -8,7 +8,7 @@ export default function Testimonials() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-20 lg:py-24 bg-light-bg">
+    <section className="py-20 lg:py-24 bg-white border-b border-slate-200/80">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="What Our Clients Say"
@@ -22,10 +22,10 @@ export default function Testimonials() {
             <div
               key={i}
               onClick={() => setActive(i)}
-              className={`relative bg-white rounded-xl p-6 cursor-pointer transition-all duration-300 ${
+              className={`relative bg-white rounded-2xl p-7 cursor-pointer transition-all duration-300 ${
                 active === i
-                  ? "shadow-xl border-2 border-yellow-400 scale-[1.02]"
-                  : "shadow-sm border border-border hover:shadow-md"
+                  ? "shadow-md border-2 border-navy scale-[1.01]"
+                  : "shadow-xs border border-slate-200 hover:shadow-sm"
               }`}
             >
               {/* Stars */}

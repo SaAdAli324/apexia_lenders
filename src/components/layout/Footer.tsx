@@ -16,9 +16,8 @@ export default function Footer() {
               <p className="text-slate text-sm leading-relaxed pr-4">
                 {BRAND.legalName} is a leading mortgage brokerage in Australia. We compare home loan, with better rates and exceptional service.
               </p>
-              <div className="mt-4 text-xs text-slate-light">
-                <p>Australian Credit Licence: 521 559</p>
-                <p>Credit Representative Number: 522 559</p>
+              <div className="mt-4 text-xs text-slate-light leading-relaxed">
+                <p>Credit Representative Number 554111 is authorised under Australian Credit Licence 389328.</p>
               </div>
             </div>
 
@@ -147,14 +146,14 @@ export default function Footer() {
               © {new Date().getFullYear()} {BRAND.legalName} trading as {BRAND.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="/privacy-policy" className="text-xs text-white/60 hover:text-white transition-colors">
+              <Link href="/privacy" className="text-xs text-white/60 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms-of-use" className="text-xs text-white/60 hover:text-white transition-colors">
+              <Link href="/terms" className="text-xs text-white/60 hover:text-white transition-colors">
                 Terms of Use
               </Link>
-              <Link href="/complaints-policy" className="text-xs text-white/60 hover:text-white transition-colors">
-                Complaints Policy
+              <Link href="/credit-guide" className="text-xs text-white/60 hover:text-white transition-colors">
+                Credit Guide &amp; Complaints
               </Link>
             </div>
           </div>

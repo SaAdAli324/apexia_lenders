@@ -2,11 +2,11 @@ import ContactForm from "@/components/forms/ContactForm";
 
 export default function ContactFormSection() {
   return (
-    <section className="py-20 lg:py-24 bg-white">
+    <section id="contact-section" className="py-20 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left — Copy */}
-          <div className="bg-navy p-8 lg:p-12 text-white flex flex-col justify-between">
+          <div className="bg-navy rounded-2xl p-8 lg:p-12 text-white flex flex-col justify-between shadow-lg">
             <div>
               <p className="text-white/70 font-semibold text-xs tracking-[0.2em] uppercase mb-4">
                 Let&apos;s Find Your Best Loan
@@ -56,8 +56,8 @@ export default function ContactFormSection() {
             </div>
           </div>
 
-          {/* Right — Form */}
-          <div className="lg:pl-8">
+          {/* Right — Form Card */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 lg:p-10 shadow-sm flex flex-col justify-center">
             <ContactForm />
           </div>
         </div>

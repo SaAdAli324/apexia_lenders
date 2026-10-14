@@ -3,7 +3,7 @@ import Link from "next/link";
 interface ButtonProps {
   children: React.ReactNode;
   href?: string;
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "outlineLight" | "ghost";
   size?: "sm" | "md" | "lg";
   className?: string;
   type?: "button" | "submit";
@@ -20,6 +20,8 @@ const variants = {
     "bg-white text-navy hover:bg-gray-50 focus:ring-navy",
   outline:
     "border border-border text-navy hover:bg-gray-50 focus:ring-navy bg-white",
+  outlineLight:
+    "border border-white/40 text-white hover:bg-white/10 hover:border-white focus:ring-white bg-transparent",
   ghost:
     "text-navy hover:text-navy-light focus:ring-navy",
 };

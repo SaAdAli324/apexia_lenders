@@ -2,126 +2,138 @@
 
 import { useState } from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Image from "next/image";
+import Button from "@/components/ui/Button";
 
 const steps = [
   {
-    number: "1",
-    title: "Tell us about you",
+    number: "01",
+    title: "Tell us about your goals",
     description:
-      "Share your goals and financial situation in a quick, no-obligation chat.",
-    icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>,
+      "Share your property ambitions and financial scenario in a quick, obligation-free chat.",
   },
   {
-    number: "2",
+    number: "02",
     title: "We compare 50+ lenders",
     description:
-      "We assess hundreds of loan products to find the right fit for you.",
-    icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>,
+      "We scan hundreds of loan products across major banks and specialist lenders to find wholesale discounts.",
   },
   {
-    number: "3",
-    title: "We recommend the best options",
+    number: "03",
+    title: "We recommend top-matched loans",
     description:
-      "You'll receive tailored recommendations with clear savings insights.",
-    icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+      "You receive transparent, side-by-side loan recommendations detailing exact rates, repayments, and savings.",
   },
   {
-    number: "4",
-    title: "We handle the paperwork",
+    number: "04",
+    title: "We manage the paperwork",
     description:
-      "We manage the entire application process, from start to finish.",
-    icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
+      "We package your documents, submit the application, and chase lender credit assessors every step of the way.",
   },
   {
-    number: "5",
+    number: "05",
     title: "You settle with confidence",
     description:
-      "Relax while we finalise your loan and get you approved.",
-    icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>,
+      "Celebrate your loan approval and settlement smoothly, with ongoing rate reviews for years to come.",
   },
 ];
 
 export default function HowItWorks() {
-  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-20 lg:py-24 bg-white border-t border-border/50">
+    <section className="py-20 lg:py-24 bg-[#FAF9F5] border-b border-slate-200/80">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Top Header */}
         <SectionHeading
-          eyebrow="How It Works"
-          title="A simple process. Better results."
+          eyebrow="Simple 5-Step Process"
+          title="From first conversation to keys in hand."
+          subtitle="We eliminate bank queues, confusing paperwork, and settlement anxiety by guiding you through every stage."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-4 xl:gap-8 mt-12 relative" onMouseLeave={() => setHoveredStep(null)}>
+        {/* 2-Column Picture Beside Content Layout */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          
+          {/* Left Column: Picture */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative aspect-[4/5] sm:aspect-[4/4] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <Image
+                src="/investment.jpg"
+                alt="Happy Australian homeowners holding house keys after settlement"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover"
+              />
 
-          {steps.map((step, index) => (
-            <div 
-              key={step.number} 
-              className="relative group flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center gap-6 lg:gap-0 max-w-[280px] sm:max-w-xs mx-auto lg:max-w-none lg:mx-0"
-              onMouseEnter={() => setHoveredStep(index)}
-            >
-              {/* Left/Top Column (Circle) */}
-              <div className="shrink-0">
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center lg:mb-8 relative z-10 shadow-sm transition-colors duration-300 ${
-                    hoveredStep !== null && index <= hoveredStep ? 'bg-teal text-white' : 'bg-navy text-white'
-                  }`}
-                >
-                  <span className="text-white text-xs font-bold">
-                    {step.number}
-                  </span>
+              {/* Bottom floating achievement card */}
+              <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-teal/15 text-teal flex items-center justify-center font-bold text-lg shrink-0">
+                    ✓
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-navy">
+                      100% Free Brokerage Guidance
+                    </p>
+                    <p className="text-[11px] text-slate mt-0.5">
+                      Australian Best Interests Duty compliant.
+                    </p>
+                  </div>
                 </div>
-              </div>
-
-              {/* Connector Line to Next Step */}
-              {index < 4 && (
-                <>
-                  {/* Desktop Horizontal Line */}
-                  <div className="hidden lg:block absolute top-[15px] left-[50%] w-[calc(100%+16px)] xl:w-[calc(100%+32px)] h-[2px] z-0">
-                    <div className="absolute inset-0 bg-slate-light/30" />
-                    <div 
-                      className="absolute left-0 top-0 h-full bg-teal transition-all duration-500 ease-in-out" 
-                      style={{ 
-                        width: hoveredStep !== null && hoveredStep > index ? '100%' : '0%',
-                        opacity: hoveredStep !== null ? 1 : 0
-                      }} 
-                    />
-                  </div>
-
-                  {/* Mobile Vertical Line */}
-                  <div className="lg:hidden absolute top-[16px] left-[15px] w-[2px] h-[calc(100%+48px)] z-0">
-                    <div className="absolute inset-0 bg-slate-light/30" />
-                    <div 
-                      className="absolute left-0 top-0 w-full bg-teal transition-all duration-500 ease-in-out" 
-                      style={{ 
-                        height: hoveredStep !== null && hoveredStep > index ? '100%' : '0%',
-                        opacity: hoveredStep !== null ? 1 : 0
-                      }} 
-                    />
-                  </div>
-                </>
-              )}
-
-              {/* Right/Bottom Column (Content) */}
-              <div className="flex flex-col items-start lg:items-center pt-1 lg:pt-0 w-full">
-                <div className="flex flex-row lg:flex-col items-center lg:items-center gap-3 lg:gap-0 mb-2 lg:mb-0">
-                  {/* Icon */}
-                  <div className="text-navy lg:mb-4 shrink-0 [&>svg]:w-6 [&>svg]:h-6 lg:[&>svg]:w-12 lg:[&>svg]:h-12 flex items-center justify-center">
-                    {step.icon}
-                  </div>
-
-                  <h3 className="text-base lg:text-sm font-bold text-navy lg:h-10 px-0 lg:px-2 leading-snug">
-                    {step.title}
-                  </h3>
-                </div>
-                
-                <p className="text-slate text-[13px] lg:text-[11px] leading-relaxed px-0 lg:px-2">
-                  {step.description}
-                </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Right Column: 5 Step Roadmap */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="space-y-4">
+              {steps.map((step, idx) => {
+                const isActive = activeStep === idx;
+                return (
+                  <div
+                    key={step.number}
+                    onClick={() => setActiveStep(idx)}
+                    className={`rounded-2xl p-5 border transition-all duration-200 cursor-pointer ${
+                      isActive
+                        ? "bg-white border-navy shadow-md scale-[1.01]"
+                        : "bg-white/60 border-slate-200 hover:bg-white hover:border-slate-300"
+                    }`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div
+                        className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 transition-colors ${
+                          isActive
+                            ? "bg-navy text-white"
+                            : "bg-slate-100 text-slate"
+                        }`}
+                      >
+                        {step.number}
+                      </div>
+
+                      <div className="flex-1">
+                        <h4 className="font-bold text-navy text-base leading-snug">
+                          {step.title}
+                        </h4>
+                        <p className="text-slate text-xs sm:text-sm mt-1 leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 pt-4 flex items-center gap-4">
+              <Button href="/contact" variant="primary" size="md" className="shadow-md">
+                Start Step 1: Free Consultation
+              </Button>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section>
   );

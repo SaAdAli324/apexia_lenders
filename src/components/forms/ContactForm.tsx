@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AUSTRALIAN_STATES, LOAN_TYPES } from "@/lib/constants";
+import { LOAN_TYPES } from "@/lib/constants";
 import Button from "@/components/ui/Button";
 
 export default function ContactForm() {
