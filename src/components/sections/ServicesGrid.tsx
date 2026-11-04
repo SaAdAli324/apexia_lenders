@@ -173,7 +173,7 @@ export default function ServicesGrid() {
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-navy mb-4 leading-tight">
-                Unlock wholesale lender pricing without the stress of bank branches.
+                Unlock discounted lender pricing without the stress of bank branches.
               </h3>
 
               <p className="text-slate text-sm sm:text-base leading-relaxed mb-6">

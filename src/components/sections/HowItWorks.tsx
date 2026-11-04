@@ -16,7 +16,7 @@ const steps = [
     number: "02",
     title: "We compare 50+ lenders",
     description:
-      "We scan hundreds of loan products across major banks and specialist lenders to find wholesale discounts.",
+      "We scan hundreds of loan products across major banks and specialist lenders to find discounted rates.",
   },
   {
     number: "03",

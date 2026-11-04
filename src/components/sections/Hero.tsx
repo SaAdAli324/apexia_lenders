@@ -11,7 +11,8 @@ interface PurposeOption {
   word: string;
   imageIndex: number;
   highlightText: string;
-  startingRate: string;
+  badgeTag: string;
+  badgeText: string;
 }
 
 const PURPOSES: PurposeOption[] = [
@@ -25,8 +26,9 @@ const PURPOSES: PurposeOption[] = [
     ),
     word: "home loan",
     imageIndex: 0,
-    highlightText: "Compare 50+ lenders for your new purchase with wholesale discounts from 5.79%*.",
-    startingRate: "From 5.79% p.a.",
+    highlightText: "Access discounted rates from 50+ top lenders to fund your new purchase.",
+    badgeTag: "Top Lenders",
+    badgeText: "Discounted Rates from top lenders",
   },
   {
     id: "refinance",
@@ -38,8 +40,9 @@ const PURPOSES: PurposeOption[] = [
     ),
     word: "refinance rate",
     imageIndex: 1,
-    highlightText: "Cut your monthly repayments by up to $380/mo with cashback deals up to $2,000.",
-    startingRate: "Save ~$380/mo",
+    highlightText: "Switch to a lower rate to cut your monthly payments and unlock $2,000 to $6,000 in cashback rewards. * T&Cs apply.",
+    badgeTag: "Cashback Rewards",
+    badgeText: "Discounted Rate & Unlock $2,000 to $6,000 Cashback Rewards.",
   },
   {
     id: "investment",
@@ -51,8 +54,9 @@ const PURPOSES: PurposeOption[] = [
     ),
     word: "investment loan",
     imageIndex: 2,
-    highlightText: "Tailored portfolio loan structures with interest-only and equity release options.",
-    startingRate: "From 6.14% p.a.",
+    highlightText: "Optimize your investment loans with tailored P&I, interest-only, or equity release structures, backed by exclusive $2,000 to $6,000 in cashback offers. * T&Cs apply.",
+    badgeTag: "Cashback Rewards",
+    badgeText: "Discounted Rate & Unlock $2,000 to $6,000 Cashback Rewards.",
   },
   {
     id: "first-home",
@@ -63,15 +67,16 @@ const PURPOSES: PurposeOption[] = [
       </svg>
     ),
     word: "first home grant",
-    imageIndex: 0,
+    imageIndex: 3,
     highlightText: "Access Australian Government 5% deposit schemes with zero Lenders Mortgage Insurance.",
-    startingRate: "5% Deposit • No LMI",
+    badgeTag: "5% Deposit Scheme",
+    badgeText: "Purchase your home with 5% Deposit. No LMI",
   },
 ];
 
 export default function Hero() {
   const words = ["home loan", "refinance rate", "investment loan", "first home grant"];
-  const images = ["/home_loan.jpg", "/refinance.jpg", "/investment.jpg"];
+  const images = ["/home_loan.jpg", "/refinance.jpg", "/investment.jpg", "/hero-house.jpg"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -97,7 +102,9 @@ export default function Hero() {
         setTimeout(() => setIsDeleting(true), 2500);
       } else if (isDeleting && currentText === "") {
         setIsDeleting(false);
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        const nextIndex = (currentWordIndex + 1) % words.length;
+        setCurrentWordIndex(nextIndex);
+        setSelectedPurpose(PURPOSES[nextIndex].id);
       } else {
         setCurrentText(
           currentWord.substring(0, currentText.length + (isDeleting ? -1 : 1))
@@ -198,7 +205,7 @@ export default function Hero() {
             </div>
 
             <p className="text-slate text-fluid-body mb-6 max-w-xl leading-relaxed">
-              Access 50+ major Australian banks and specialist lenders. We negotiate wholesale rate discounts and handle all paperwork from pre-approval to settlement.
+              Access 50+ major Australian banks and specialist lenders. We negotiate discounted rates and handle all paperwork from pre-approval to settlement.
             </p>
 
             {/* Purpose Selector Tabs */}
@@ -306,18 +313,18 @@ export default function Hero() {
               <div className="p-3 bg-white/95 rounded-3xl shadow-2xl border border-white/80 ring-1 ring-slate-200/60 backdrop-blur-md relative">
                            {/* Floating Top Widget: Rate & Savings */}
                 {!showForm && (
-                  <div className="absolute -top-4 -right-3 z-30 bg-white rounded-2xl p-3.5 shadow-xl border border-teal/30 flex items-center gap-3 animate-subtle-float">
-                    <div className="w-10 h-10 rounded-xl bg-teal/15 text-teal flex items-center justify-center shrink-0">
+                  <div className="absolute -top-4 -right-3 sm:-right-4 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 shadow-xl border border-teal/30 flex items-center gap-3 animate-subtle-float max-w-[270px] sm:max-w-[310px]">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-teal/15 text-teal flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-slate uppercase tracking-wider">
-                        Wholesale Market Rate
+                      <p className="text-[10px] font-bold text-teal uppercase tracking-wider">
+                        {activePurposeObj.badgeTag}
                       </p>
-                      <p className="text-sm font-extrabold text-navy">
-                        {activePurposeObj.startingRate}
+                      <p className="text-xs sm:text-sm font-extrabold text-navy leading-snug">
+                        {activePurposeObj.badgeText}
                       </p>
                     </div>
                   </div>
@@ -344,8 +351,8 @@ export default function Hero() {
                             alt="Apexia Lending Loan Guidance"
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className={`object-cover transition-opacity duration-700 ease-in-out ${
-                              targetIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+                            className={`object-cover transition-all duration-1000 ease-in-out ${
+                              targetIndex === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105 pointer-events-none"
                             }`}
                             priority={index === 0}
                           />

@@ -474,7 +474,7 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
       },
       {
         question: "What are break costs?",
-        answer: "Break costs are fees charged by lenders if you terminate a fixed rate loan early (e.g. by selling the property, refinancing, or making excess payments) and wholesale money market rates have dropped since you locked in.",
+        answer: "Break costs are fees charged by lenders if you terminate a fixed rate loan early (e.g. by selling the property, refinancing, or making excess payments) and benchmark money market rates have dropped since you locked in.",
       },
     ],
     relatedCalculator: {

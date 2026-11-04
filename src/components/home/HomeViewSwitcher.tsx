@@ -6,7 +6,6 @@ import { useState, useEffect, useSyncExternalStore } from "react";
 import Hero from "@/components/sections/Hero";
 import StatsBar from "@/components/sections/StatsBar";
 import TrustBar from "@/components/sections/TrustBar";
-import FeaturedRates from "@/components/sections/FeaturedRates";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import CalculatorsSection from "@/components/sections/CalculatorsSection";
 import ComparisonMatrix from "@/components/sections/ComparisonMatrix";
@@ -82,7 +81,6 @@ export default function HomeViewSwitcher() {
           <Hero />
           <StatsBar />
           <TrustBar />
-          <FeaturedRates />
           <ServicesGrid />
           <CalculatorsSection />
           <ComparisonMatrix />
@@ -165,7 +163,7 @@ export default function HomeViewSwitcher() {
                   </p>
                 ) : (
                   <p>
-                    <strong className="text-navy font-semibold">Enhanced Layout Active:</strong> Includes today&apos;s 3D Hero, Stats bar, Wholesale Rates, Comparison Matrix, and FAQ.
+                    <strong className="text-navy font-semibold">Enhanced Layout Active:</strong> Includes today&apos;s 3D Hero, Stats bar, Services Grid, Calculators, Comparison Matrix, and FAQ.
                   </p>
                 )}
               </div>

@@ -77,7 +77,7 @@ export default function AboutPage() {
                 When homeowners go directly to a retail bank branch, they are only offered that single bank&apos;s branded products, regardless of whether a competitor across the street has a rate that is 0.70% cheaper or a policy that accommodates their specific income scenario.
               </p>
               <p className="text-sm sm:text-base text-slate leading-relaxed">
-                Operated by <strong>Zawak Private Ltd</strong> under the brand name <strong>Apexia Lending</strong>, our brokerage was built to shift the balance of power back to Australian borrowers. We operate with zero lender bias. By surveying 50+ of Australia&apos;s leading financial institutions—including the Big 4, regional customer-owned banks, and wholesale non-bank funders—we pinpoint loans tailored precisely to your goals.
+                Operated by <strong>Zawak Private Ltd</strong> under the brand name <strong>Apexia Lending</strong>, our brokerage was built to shift the balance of power back to Australian borrowers. We operate with zero lender bias. By surveying 50+ of Australia&apos;s leading financial institutions—including the Big 4, regional customer-owned banks, and specialist non-bank funders—we pinpoint loans tailored precisely to your goals.
               </p>
               
               <div className="p-5 rounded-2xl bg-teal/5 border border-teal/20 text-navy">

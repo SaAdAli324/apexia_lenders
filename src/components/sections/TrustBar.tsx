@@ -17,7 +17,7 @@ const ALL_LOGOS = [
   "/lender-logos/u bank.png",
   "/lender-logos/amp.png",
   "/lender-logos/bankwest.png",
-  "/lender-logos/heritage bank.png",
+  "/lender-logos/people first bank.png",
   
   // Group 2 - The remaining banks
   "/lender-logos/Gateway bank.png",

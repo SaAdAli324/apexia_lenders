@@ -19,6 +19,7 @@ export const lenders: Lender[] = [
   { name: "Auswide", slug: "auswide" },
   { name: "Better Choice", slug: "better-choice" },
   { name: "Bankwest", slug: "bankwest" },
+  { name: "People First Bank", slug: "people-first-bank", logo: "/lender-logos/people first bank.png" },
   { name: "Suncorp", slug: "suncorp" },
   { name: "Adelaide Bank", slug: "adelaide-bank" },
   { name: "Bank of Melbourne", slug: "bank-of-melbourne" },

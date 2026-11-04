@@ -26,7 +26,7 @@ const STATS = [
   {
     number: "5.79%*",
     label: "Starting Rates",
-    subtext: "Competitive wholesale & broker pricing",
+    subtext: "Competitive discounted broker pricing",
     icon: (
       <svg className="w-6 h-6 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
