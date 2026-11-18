@@ -189,14 +189,47 @@ describe('Amortisation Schedule Chart Generator', () => {
   });
 });
 
-describe('Stamp Duty Engine and Coming Soon Guard (Section 7)', () => {
-  it('identifies unverified TODO_VERIFY placeholders in STAMP_DUTY_DATA', () => {
+describe('Stamp Duty Engine and Verification Status (Section 7)', () => {
+  it('confirms official STAMP_DUTY_DATA is verified with zero placeholders', () => {
     const hasPlaceholders = hasTodoVerify(STAMP_DUTY_DATA);
-    assert.strictEqual(hasPlaceholders, true);
-    assert.strictEqual(isStampDutyDataVerified(STAMP_DUTY_DATA), false);
+    assert.strictEqual(hasPlaceholders, false);
+    assert.strictEqual(isStampDutyDataVerified(STAMP_DUTY_DATA), true);
   });
 
-  it('returns isComingSoon: true and NEVER displays a number while placeholders exist', () => {
+  it('returns isComingSoon: true when unverified mock placeholder data is supplied', () => {
+    const unverifiedMock: Record<string, StateStampDutyConfig> = {
+      NSW: {
+        state: 'NSW',
+        name: 'New South Wales',
+        source: 'https://www.revenue.nsw.gov.au',
+        asAt: '2026',
+        standardBrackets: [{ threshold: 'TODO_VERIFY', baseDuty: 'TODO_VERIFY', rate: 'TODO_VERIFY' }],
+        firstHomeBuyerConcession: {
+          establishedHome: { exemptThreshold: 'TODO_VERIFY', concessionThreshold: 'TODO_VERIFY' },
+          newHome: { exemptThreshold: 'TODO_VERIFY', concessionThreshold: 'TODO_VERIFY' },
+          vacantLand: { exemptThreshold: 'TODO_VERIFY', concessionThreshold: 'TODO_VERIFY' },
+        },
+      },
+    };
+
+    const result = stampDuty(
+      {
+        state: 'NSW',
+        propertyPrice: 850000,
+        propertyType: 'established',
+        usage: 'primary',
+        firstHomeBuyer: false,
+      },
+      unverifiedMock
+    );
+
+    assert.strictEqual(result.isComingSoon, true);
+    assert.strictEqual(result.totalPayable, null);
+    assert.strictEqual(result.standardDuty, null);
+    assert.strictEqual(result.concessionAmount, null);
+  });
+
+  it('calculates live duty accurately from verified STAMP_DUTY_DATA', () => {
     const result = stampDuty({
       state: 'NSW',
       propertyPrice: 850000,
@@ -205,10 +238,9 @@ describe('Stamp Duty Engine and Coming Soon Guard (Section 7)', () => {
       firstHomeBuyer: false,
     });
 
-    assert.strictEqual(result.isComingSoon, true);
-    assert.strictEqual(result.totalPayable, null);
-    assert.strictEqual(result.standardDuty, null);
-    assert.strictEqual(result.concessionAmount, null);
+    assert.strictEqual(result.isComingSoon, false);
+    assert.ok(result.totalPayable! > 0);
+    assert.strictEqual(result.totalPayable, result.standardDuty);
   });
 
   it('calculates duty accurately when verified data fixture is supplied', () => {

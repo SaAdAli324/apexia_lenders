@@ -290,13 +290,25 @@ export function stampDuty(
   const price = Math.max(0, inputs.propertyPrice || 0);
   let standardDuty = 0;
 
-  for (const bracket of stateConfig.standardBrackets) {
-    const threshold = bracket.threshold as number;
-    const baseDuty = bracket.baseDuty as number;
-    const rate = bracket.rate as number;
+  if (price > 0) {
+    if (inputs.state === 'NT' && price <= 525000) {
+      const v = price / 1000;
+      standardDuty = (0.06571441 * v * v) + (15 * v);
+    } else {
+      const activeBrackets =
+        inputs.usage === 'investment' && stateConfig.investmentBrackets
+          ? stateConfig.investmentBrackets
+          : stateConfig.standardBrackets;
 
-    if (price > threshold) {
-      standardDuty = baseDuty + (price - threshold) * rate;
+      for (const bracket of activeBrackets) {
+        const threshold = bracket.threshold as number;
+        const baseDuty = bracket.baseDuty as number;
+        const rate = bracket.rate as number;
+
+        if (price > threshold) {
+          standardDuty = baseDuty + (price - threshold) * rate;
+        }
+      }
     }
   }
 
